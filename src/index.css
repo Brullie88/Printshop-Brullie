@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-black: #0D0D0D;
+  --color-brand-anthracite: #1A1A1A;
+  --color-brand-white: #FFFFFF;
+  --color-brand-blue: #00B7FF;
+  --color-brand-purple: #7A5CFF;
+  --color-brand-gray: #F5F5F7;
+  --color-brand-green: #22C55E;
+  --color-brand-red: #EF4444;
+
+  --color-background: var(--color-brand-black);
+  --color-foreground: var(--color-brand-white);
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 5%; /* #0D0D0D */
+    --foreground: 0 0% 100%; /* #FFFFFF */
+    --card: 0 0% 10%; /* #1A1A1A */
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 10%; /* #1A1A1A */
+    --popover-foreground: 0 0% 100%;
+    --primary: 196 100% 50%; /* #00B7FF */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 251 100% 68%; /* #7A5CFF */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 196 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%; /* #EF4444 */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 196 100% 50%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-white/10;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-brand-blue selection:text-white;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-anthracite);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-blue);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
